@@ -601,11 +601,12 @@ impl Wallet {
         let index = create_indexer(descriptor, change_descriptor, params.lookahead)
             .map_err(LoadError::Descriptor)?;
 
-        let mut indexed_graph = IndexedTxGraph::new(index);
+        let mut indexed_graph = IndexedTxGraph::new(index.clone());
         indexed_graph.apply_changeset(changeset.indexer.into());
         indexed_graph.apply_changeset(changeset.tx_graph.into());
 
         let mut stage = ChangeSet::default();
+        stage.indexer.spk_cache = index.spk_cache().clone();
 
         Ok(Some(Wallet {
             signers,
