@@ -605,7 +605,7 @@ impl Wallet {
         indexed_graph.apply_changeset(changeset.indexer.into());
         indexed_graph.apply_changeset(changeset.tx_graph.into());
 
-        let stage = ChangeSet::default();
+        let mut stage = ChangeSet::default();
 
         Ok(Some(Wallet {
             signers,

@@ -60,3 +60,8 @@ required-features = ["all-keys"]
 name = "miniscriptc"
 path = "examples/compiler.rs"
 required-features = ["compiler"]
+
+[patch.crates-io]
+bdk_chain = { git = "https://github.com/portlandhodl/bdk.git", branch = "wallet-1.1.1" }
+bdk_core = { git = "https://github.com/portlandhodl/bdk.git", branch = "wallet-1.1.1" }
+bdk_wallet = { git = "https://github.com/portlandhodl/bdk_wallet.git", branch = "wallet-1.2.1" }

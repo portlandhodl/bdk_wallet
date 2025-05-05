@@ -25,3 +25,7 @@ authors = ["Bitcoin Dev Kit Developers"]
 [workspace.lints.clippy]
 print_stdout = "deny"
 print_stderr = "deny"
+
+[patch.crates-io]
+bdk_chain = { git = "https://github.com/portlandhodl/bdk.git", branch = "wallet-1.1.1" }
+bdk_core = { git = "https://github.com/portlandhodl/bdk.git", branch = "wallet-1.1.1" }
